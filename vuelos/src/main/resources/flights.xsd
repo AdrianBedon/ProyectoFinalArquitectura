@@ -1,0 +1,102 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://aerolineas.com/aerolinea-soap/"
+           targetNamespace="http://aerolineas.com/aerolinea-soap/" elementFormDefault="qualified">
+
+    <xs:element name="getAirlineByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idAerolinea" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAirlineByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="aerolinea" type="tns:aerolinea"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllFlightsRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getAllFlightsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vuelos" type="tns:vuelo" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPlanesByFlightRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idVuelo" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPlanesByFlightResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="aviones" type="tns:avion" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAirportByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idAeropuerto" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAirportByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="aeropuerto" type="tns:aeropuerto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="aerolinea">
+        <xs:sequence>
+            <xs:element name="idAerolinea" type="xs:long"/>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="pais" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vuelo">
+        <xs:sequence>
+            <xs:element name="idVuelo" type="xs:long"/>
+            <xs:element name="numero" type="xs:string"/>
+            <xs:element name="fechaSalida" type="xs:string"/>
+            <xs:element name="fechaLlegada" type="xs:string"/>
+            <xs:element name="idAerolinea" type="xs:long"/>
+            <xs:element name="idAeropuertoSalida" type="xs:long"/>
+            <xs:element name="idAeropuertoLlegada" type="xs:long"/>
+            <xs:element name="idAvion" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="avion">
+        <xs:sequence>
+            <xs:element name="idAvion" type="xs:long"/>
+            <xs:element name="modelo" type="xs:string"/>
+            <xs:element name="capacidad" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="aeropuerto">
+        <xs:sequence>
+            <xs:element name="idAeropuerto" type="xs:long"/>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="pais" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

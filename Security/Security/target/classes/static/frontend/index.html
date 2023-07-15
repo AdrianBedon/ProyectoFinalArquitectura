@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplicación de Seguridad</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Iniciar sesión</h1>
+    <form id="loginForm">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" required><br><br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required><br><br>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        // Manejar el evento de envío del formulario de inicio de sesión
+        $('#loginForm').submit(function (event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            var username = $('#username').val();
+            var password = $('#password').val();
+
+            // Enviar solicitud POST al endpoint de inicio de sesión
+            $.ajax({
+                url: 'http://localhost:8084/login',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ username: username, password: password }),
+                success: function (response) {
+                    // Manejar la respuesta exitosa
+                    $('#response').text('Inicio de sesión exitoso. Token: ' + response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // Manejar el error
+                    $('#response').text('Error: ' + textStatus);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

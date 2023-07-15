@@ -1,0 +1,5 @@
+com\udla\Security\UsuarioRepository.class
+com\udla\Security\TokenService.class
+com\udla\Security\SecurityController.class
+com\udla\Security\SecurityApplication.class
+com\udla\Security\Usuario.class
