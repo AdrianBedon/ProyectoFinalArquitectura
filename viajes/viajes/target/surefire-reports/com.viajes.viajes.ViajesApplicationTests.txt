@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.viajes.viajes.ViajesApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.133 s <<< FAILURE! - in com.viajes.viajes.ViajesApplicationTests
+com.viajes.viajes.ViajesApplicationTests  Time elapsed: 0.132 s  <<< ERROR!
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Adrián\Universidad\Diseño y arquitectura de Software\viajes\viajes\target\test-classes\com\viajes\viajes\ViajesApplicationTests.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Adrián\Universidad\Diseño y arquitectura de Software\viajes\viajes\target\test-classes\com\viajes\viajes\ViajesApplicationTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 64
+Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Adrián\Universidad\Diseño y arquitectura de Software\viajes\viajes\target\test-classes\com\viajes\viajes\ViajesApplicationTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 64
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 64
+
